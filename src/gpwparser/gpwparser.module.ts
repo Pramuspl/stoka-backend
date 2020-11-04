@@ -1,9 +1,9 @@
 import { GpwParserService } from './gpwparser.service';
-import { Module } from '@nestjs/common';
+import { HttpModule, Module } from '@nestjs/common';
 import { GpwParserController } from './gpwparser.controller';
 
 @Module({
-  imports: [],
+  imports: [HttpModule],
   controllers: [GpwParserController],
   providers: [GpwParserService],
 })

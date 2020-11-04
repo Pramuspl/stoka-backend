@@ -1,11 +1,11 @@
-import { Controller, Get } from '@nestjs/common';
+import { Controller, Get, Param } from '@nestjs/common';
 import { GpwParserService } from './gpwparser.service';
 
-@Controller()
+@Controller('parse')
 export class GpwParserController {
   constructor(private readonly gpwParserService: GpwParserService) {}
-  @Get('date')
-  parseGpw(): string {
-    return this.gpwParserService.parseDay();
+  @Get(':date?')
+  parseGpw(@Param('date') date): any {
+    return this.gpwParserService.parseDay(date);
   }
 }
