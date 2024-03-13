@@ -1,5 +1,6 @@
 # history files
 .history
+.env
 
 # compiled output
 /dist
